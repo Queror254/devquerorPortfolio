@@ -9,7 +9,7 @@ This my work portfolio
       {yarn install}
 # MIGRATIONS :
 3. run the migrations using : 
-      - <node ace migration:run>
+      - {node ace migration:run}
 # START : 
 4. And finally  start the server with :  
-       - <node ace serve --watch>
+       - {node ace serve --watch}
