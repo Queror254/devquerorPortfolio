@@ -6,7 +6,7 @@ This my work portfolio
       - <git clone https://github.com/Queror254/devquerorPortfolio.git>
 
 2. use this yarn command to install the dependancies : 
-      - <yarn install>
+      {yarn install}
 # MIGRATIONS :
 3. run the migrations using : 
       - <node ace migration:run>
