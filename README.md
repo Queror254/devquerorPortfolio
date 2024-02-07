@@ -12,4 +12,4 @@ This my work portfolio
       - node ace migration:run
 # START : 
 4. And finally  start the server with :  
-       - node ace serve --watch
+       node ace serve --watch
