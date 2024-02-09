@@ -13,10 +13,9 @@ export default class extends BaseSchema {
       table.string('city').notNullable()
       table.integer('age').notNullable()
       table.string('level').notNullable().notNullable()
-      table.string('email').notNullable()
+      table.string('email', 100).notNullable()
       table.string('freelance').notNullable()
       table.text('content').notNullable()
-      table.binary('image')
 
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })

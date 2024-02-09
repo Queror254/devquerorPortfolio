@@ -35,9 +35,6 @@ export default class About extends BaseModel {
   @column()
   public content: string
 
-  @column()
-  public image: Buffer // Buffer type for storing binary data
-
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

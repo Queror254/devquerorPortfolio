@@ -1,4 +1,5 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import About from 'App/Models/About';
 
 export default class ViewsController {
     public async index({ view }: HttpContextContract) {
@@ -22,7 +23,8 @@ export default class ViewsController {
     }
 
     public async admin({ view }: HttpContextContract) {
-        // Render the 'admindash.edge' template
-        return view.render('dashboard/admindash');
+        const about = await About.all();
+        console.log(about);
+        return view.render('dashboard/admindash', { about });
     }
 }

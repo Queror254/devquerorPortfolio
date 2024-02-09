@@ -4,6 +4,18 @@
 (function () {
     "use strict";
 
+    /***audio player **/
+    const playPauseButton = document.getElementById('play-pause');
+    const audioPlayer = document.getElementById('audio-player');
+
+    playPauseButton.addEventListener('click', function () {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    });
+
     /**
      * Easy selector helper function
      */

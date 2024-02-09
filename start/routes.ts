@@ -35,3 +35,16 @@ Route.get('/admin/panel_', "ViewsController.admin").as('route.adminPanel')
 //post request : 
 Route.post('/create/admin', 'AuthController.signup').as('route.createAdmin')
 Route.post("/admin/login", "AuthController.login").as('route.loginAdmin')
+
+//
+// Route for storing new about data
+Route.post('/abouts', 'AboutsController.store')
+
+// Route for updating existing about data
+Route.put('/abouts/update', 'AboutsController.update')
+
+// Route for deleting existing about data
+Route.delete('/abouts/delete', 'AboutsController.destroy')
+
+//test 
+Route.get('/test', 'AboutsController.index')

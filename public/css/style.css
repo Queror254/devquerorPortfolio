@@ -16,6 +16,22 @@
   background-size: cover;
 } */
 
+:root {
+    --main-color: #c93429;
+    --body-bg: #ffffff;
+    --bg-color: hsl(228, 15%, 20%);
+    --second-bg: #f5f5f5;
+    --text-color: #000000;
+    --text-white: #ffffff;
+    --text-gray: #868686;
+    --main-hover: #9b2d25;
+
+    --section-space: 100px;
+    --nav-size: 70px;
+    --logo-size: 45px;
+    --banner-height: 400px;
+}
+
 /** Common **/
 .icon-box {
     cursor: pointer;
@@ -46,7 +62,7 @@
 }
 
 .about .container {
-    background: rgba(204, 204, 204, 0.1) !important;
+    background: var(--bg-color) !important;
 }
 
 /*em color:*/
@@ -465,7 +481,7 @@ section .container {
 .about-me .content h3 {
     font-weight: 700;
     font-size: 26px;
-    color: #4318d2;
+    color: #088c0a;
 }
 
 .about-me .content ul {
@@ -1340,9 +1356,10 @@ section .container {
     /*   background: linear-gradient(275deg, var(--primary-color), transparent); */
 }
 
+/*
 .blog-block-row {
-    /*   align-items: center; */
-}
+    /*   align-items: center; 
+}*/
 
 .blog-block-image {
     width: 100%;
