@@ -81,7 +81,7 @@
     </header><!-- End Header -->
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about"> <!---I have removed the title section-->
 
         <!-- ======= About Me ======= -->
         <div class="about-me container">
@@ -95,46 +95,51 @@
                 <div class="col-lg-4" data-aos="fade-right">
                     <img src="/images/profile.png" class="img-fluid" alt="">
                 </div>
-
                 <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                    @foreach(abt in about)
-                    <h3>{{abt.title}}</h3>
+                    <h3>Software Developer</h3>
                     <p class="fst-italic">
-                        {{abt.intro}}
+
+                        Welcome to my portfolio! I'm Victor, a software developer weaving functionality and
+                        creativity into every project. Explore my journey in the realm of code and discover the digital
+                        experiences I've crafted.
                     </p>
                     <div class="row">
                         <div class="col-lg-6">
                             <ul>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
-                                    <span>{{abt.website}}</span>
+                                    <span>www.example.com</span>
                                 </li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong>
-                                    <span>{{abt.phone}}</span>
-                                </li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{abt.city}}</span>
-                                </li>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{abt.age}}</span>
-                                </li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+254 7951 151
+                                        55</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Nairobi,
+                                        Kenya</span></li>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>20</span></li>
                             </ul>
                         </div>
                         <div class="col-lg-6">
                             <ul>
-                                <li><i class="bi bi-chevron-right"></i> <strong>Level:</strong>
-                                    <span>{{abt.level}}</span>
+                                <li><i class="bi bi-chevron-right"></i> <strong>Level:</strong> <span>MidLevel</span>
                                 </li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong>
-                                    <span>{{abt.email}}</span>
+                                    <span>querortech.int@gmail.com</span>
                                 </li>
                                 <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong>
-                                    <span>{{abt.freelance}}</span>
+                                    <span>Available</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <p>
-                        {{abt.content}}
+
+                        I am a seasoned software developer proficient in both frontend and backend technologies. On the
+                        frontend, I specialize in creating engaging user interfaces using HTML, CSS, and JavaScript,
+                        along with frameworks like React, ReactNative and vuejs. My backend expertise includes
+                        server-side languages
+                        such as Python and Node.js, with a focus on database management and API design. Bridging
+                        the gap between frontend and backend, I excel in crafting end-to-end solutions that prioritize
+                        user experience and system robustness. My adaptability, attention to detail, and commitment to
+                        staying updated on industry trends drive my success in delivering high-quality software.
                     </p>
-                    @endforeach
                 </div>
             </div>
 
@@ -456,13 +461,14 @@
 
         </div><!-- End Testimonials  -->
 
-    </section><!-- End About Section -->
+    </section>
+    <!--======= End About Section =======-->
 
     <!-- ======= Resume Section ======= 
     <section id="resume" class="resume">
         <div class="container">
 
-            <div class="section-title">
+            <div class="section-title"> 
                 <h2>Resume</h2>
                 <p>Check My Resume</p>
             </div>
