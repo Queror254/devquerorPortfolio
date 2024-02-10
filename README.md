@@ -9,10 +9,12 @@ This my work portfolio
 2. use this yarn command to install the dependancies : 
       - yarn install
 # MIGRATIONS :
-3 .to configure the database run : 
+3. to configure the database run : 
      - node ace configure @adonisjs/lucid
- . run the migrations using : 
+
+4. run the migrations using : 
       - node ace migration:run
+
 # START : 
-4. And finally  start the server with :  
+5. And finally  start the server with :  
       - node ace serve --watch
