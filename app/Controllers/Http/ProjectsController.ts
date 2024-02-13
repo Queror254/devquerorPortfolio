@@ -18,7 +18,7 @@ export default class ProjectsController {
             await image.move('public/images')
 
             // If the image was moved successfully, update the data object with the file name
-            if (!image.moved()) {
+            if (!image) {
                 throw image.error()
             }
             data.image = image.fileName
@@ -31,7 +31,7 @@ export default class ProjectsController {
         } catch (error) {
             // Handle any errors that occur during file move or project creation
             console.error(error)
-            return { error: 'Error creating project' }
+            return { error }
         }
     }
 

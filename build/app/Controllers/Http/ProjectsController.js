@@ -14,7 +14,7 @@ class ProjectsController {
             const data = request.only(['title', 'content', 'website', 'slug']);
             const image = request.file('image');
             await image.move('public/images');
-            if (!image.moved()) {
+            if (!image) {
                 throw image.error();
             }
             data.image = image.fileName;
@@ -23,7 +23,7 @@ class ProjectsController {
         }
         catch (error) {
             console.error(error);
-            return { error: 'Error creating project' };
+            return { error };
         }
     }
     async edit({ params, view }) {
