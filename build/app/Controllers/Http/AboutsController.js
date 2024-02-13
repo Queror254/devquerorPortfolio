@@ -5,18 +5,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const About_1 = __importDefault(global[Symbol.for('ioc.use')]("App/Models/About"));
 class AboutsController {
-    async index({ }) {
+    async index({}) {
         const about = await About_1.default.query().firstOrFail();
         console.log(about);
         return about;
     }
-    async store({ request }) {
+    async store({ request, response }) {
         try {
             const data = request.only(['title', 'intro', 'website', 'phone', 'city', 'age', 'level', 'email', 'freelance', 'content',]);
-
-            const about = await About_1.default.create(data);
-            return about;
-        } catch (error) {
+            await About_1.default.create(data);
+            return response.redirect().back();
+        }
+        catch (error) {
             return { error };
         }
     }

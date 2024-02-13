@@ -11,10 +11,14 @@ export default class AboutsController {
   }
 
   // POST /abouts {store}
-  public async store({ request }: HttpContextContract) {
-    const data = request.only(['title', 'intro', 'website', 'phone', 'city', 'age', 'level', 'email', 'freelance', 'content',])
-    const about = await About.create(data)
-    return about
+  public async store({ request, response }: HttpContextContract) {
+    try {
+      const data = request.only(['title', 'intro', 'website', 'phone', 'city', 'age', 'level', 'email', 'freelance', 'content',])
+      await About.create(data)
+      return response.redirect().back();
+    } catch (error) {
+      return { error };
+    }
   }
 
   // PUT /abouts/:id{update}

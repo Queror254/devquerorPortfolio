@@ -48,3 +48,21 @@ Route.delete('/abouts/delete', 'AboutsController.destroy')
 
 //test 
 Route.get('/test', 'AboutsController.index')
+
+///============== Portfolio Route ===================///
+
+//View all the projects
+Route.get('/project', 'ProjectsController.index')
+
+//Create a portfolio item
+Route.post('/store_project', 'ProjectsController.store')
+
+//Update an existing portfolio item
+Route.put('/update_project/:slug', 'ProjectsController.update')
+
+//Delete an existing portfolio item 
+Route.delete('/delete_project/:slug', 'ProjectsController.delete')
+
+
+//edit an existing portfolio item 
+Route.patch('/edit_project/:slug', 'ProjectsController.edit')

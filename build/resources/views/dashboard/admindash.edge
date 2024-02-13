@@ -237,48 +237,95 @@
         <!--Main 2-->
         <main class="d-none" id="main-2">
             <div class="header">
-                <h1>About : </h1>
+                <h1>Upload/store/delete/edit</h1>
             </div>
 
             <!--============= Filter Card Start ===============-->
             <div>
-                <form action="/abouts" method="POST" enctype="multipart/form-data">
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" name="title"><br><br>
+                <div id="about">
+                    <!--Create About -->
+                    <form action="/abouts" method="POST" enctype="multipart/form-data">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title"><br><br>
 
-                    <label for="intro">Intro:</label>
-                    <textarea type="text" id="intro" name="intro" cols="20" rows="5"></textarea><br><br>
+                        <label for="intro">Intro:</label>
+                        <textarea type="text" id="intro" name="intro" cols="20" rows="5"></textarea><br><br>
 
-                    <label for="website">Website:</label>
-                    <input type="text" id="website" name="website"><br><br>
+                        <label for="website">Website:</label>
+                        <input type="text" id="website" name="website"><br><br>
 
-                    <label for="phone">Phone:</label>
-                    <input type="text" id="phone" name="phone"><br><br>
+                        <label for="phone">Phone:</label>
+                        <input type="text" id="phone" name="phone"><br><br>
 
-                    <label for="city">City:</label>
-                    <input type="text" id="city" name="city"><br><br>
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city"><br><br>
 
-                    <label for="age">Age:</label>
-                    <input type="number" id="age" name="age"><br><br>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age"><br><br>
 
-                    <label for="level">Level:</label>
-                    <input type="text" id="level" name="level"><br><br>
+                        <label for="level">Level:</label>
+                        <input type="text" id="level" name="level"><br><br>
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email"><br><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email"><br><br>
 
-                    <label for="freelance">Freelance:</label>
-                    <input type="text" id="freelance" name="freelance"><br><br>
+                        <label for="freelance">Freelance:</label>
+                        <input type="text" id="freelance" name="freelance"><br><br>
 
-                    <label for="content">Content:</label>
-                    <textarea id="content" name="content" cols="30" rows="10"></textarea><br><br>
+                        <label for="content">Content:</label>
+                        <textarea id="content" name="content" cols="30" rows="10"></textarea><br><br>
 
-                    <input type="submit" value="Submit">
-                </form>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
 
+                <div id="create-prj">
+                    <!-- Create Project Form -->
+                    <h2>Create Project</h2>
+                    <form action="/store_project" method="post" enctype="multipart/form-data">
+                        <input type="text" name="title" placeholder="Title" required><br>
+                        <textarea name="content" placeholder="Content" required></textarea><br>
+                        <input type="text" name="website" placeholder="Website" required><br>
+                        <input type="file" name="image"><br>
+                        <button type="submit">Create</button>
+                    </form>
+
+                </div>
+
+                <div id="update-prj">
+                    <!-- Update Project Form -->
+                    <h2>Update Project</h2>
+                    <form id="updateForm" action="/update_project/" method="post" enctype="multipart/form-data">
+                        <input type="text" name="title" placeholder="Title" required><br>
+                        <textarea name="content" placeholder="Content" required></textarea><br>
+                        <input type="text" name="website" placeholder="Website" required><br>
+                        <input type="file" name="image"><br>
+                        <button type="submit">Update</button>
+                    </form>
+                </div>
+
+                <div id="edit-prj">
+                    <!-- Edit Project Form -->
+                    <h2>Edit Project</h2>
+                    <form id="editForm" action="/edit_project/" method="post">
+                        <input type="hidden" name="_method" value="PATCH">
+                        <input type="text" name="slug" placeholder="Enter project slug to edit" required><br>
+                        <button type="submit">Edit</button>
+                    </form>
+                </div>
+
+                <div id="delete-prj">
+                    <!-- Delete Project Form -->
+                    <h2>Delete Project</h2>
+                    <form id="deleteForm" action="/delete_project/" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="text" name="slug" placeholder="Enter project slug to delete" required><br>
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
 
             </div>
-            <!--Result-container-start-->
+
             <div class="bottom_data">
             </div>
 

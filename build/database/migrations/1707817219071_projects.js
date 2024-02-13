@@ -7,11 +7,15 @@ const Schema_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Lucid/Sch
 class default_1 extends Schema_1.default {
     constructor() {
         super(...arguments);
-        this.tableName = 'details';
+        this.tableName = 'projects';
     }
     async up() {
         this.schema.createTable(this.tableName, (table) => {
             table.increments('id');
+            table.string('title').notNullable();
+            table.string('content').notNullable();
+            table.string('slug').unique();
+            table.string('image').nullable();
             table.timestamp('created_at', { useTz: true });
             table.timestamp('updated_at', { useTz: true });
         });
@@ -21,4 +25,4 @@ class default_1 extends Schema_1.default {
     }
 }
 exports.default = default_1;
-//# sourceMappingURL=1707548844477_details.js.map
+//# sourceMappingURL=1707817219071_projects.js.map
