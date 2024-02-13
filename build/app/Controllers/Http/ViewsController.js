@@ -6,10 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const About_1 = __importDefault(global[Symbol.for('ioc.use')]("App/Models/About"));
 class ViewsController {
     async index({ view }) {
-        // Render the 'home.edge' template
         const about = await About_1.default.all();
         return view.render('home', { about });
-
     }
     async details({ view }) {
         return view.render('details');
@@ -22,7 +20,6 @@ class ViewsController {
     }
     async admin({ view }) {
         const about = await About_1.default.all();
-        console.log(about);
         return view.render('dashboard/admindash', { about });
     }
 }

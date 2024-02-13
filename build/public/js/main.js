@@ -4,7 +4,7 @@
 (function () {
     "use strict";
 
-    /***audio player 
+    /***audio player
     const playPauseButton = document.getElementById('play-pause');
     const audioPlayer = document.getElementById('audio-player');
 
@@ -14,7 +14,7 @@
         } else {
             audioPlayer.pause();
         }
-    }); **/
+    });**/
 
     /**
      * Easy selector helper function

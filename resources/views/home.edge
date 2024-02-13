@@ -38,15 +38,16 @@
 </head>
 
 <body style="background: url('/images/bgpic.jpg'); background-size:cover;">
+    <div class="h-content">
+        <h1><a href="index.html">Hi there!<br /> I'm Devqueror</a></h1>
+    </div>
 
     <!-- ======= Header ======= -->
     <header id="header">
         <div class="container">
-
-            <h1><a href="index.html">Devqueror</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="mr-auto"><img src="/images/logo.png" alt="" class="img-fluid"></a> -->
-            <h2>I'm a passionate <span style="color: #29cc61;">Software Developer</span> from Kenya</h2>
+            <h2>A passionate <span style="color: #29cc61;">Software Developer</span> from Kenya</h2>
 
             <nav id="navbar" class="navbar">
                 <ul>
@@ -96,7 +97,9 @@
                     <img src="/images/profile.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                    <h3>Software Developer</h3>
+                    @each(abt in about)
+                    <h3>{{abt.title}}</h3>
+                    @end
                     <p class="fst-italic">
 
                         Welcome to my portfolio! I'm Victor, a software developer weaving functionality and

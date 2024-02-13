@@ -8,7 +8,7 @@ Route_1.default.get('/welcome', async ({ view }) => {
     return view.render('welcome');
 });
 Route_1.default.get('/', "ViewsController.index").as('route.home');
-Route_1.default.get('/admin/login', "ViewsController.login").as('route.login');
+Route_1.default.get('/admin/', "ViewsController.login").as('route.login');
 Route_1.default.get('/admin/signup', "ViewsController.signup").as('route.signup');
 Route_1.default.get('/details', "ViewsController.details").as('route.details');
 Route_1.default.get('/admin/panel_', "ViewsController.admin").as('route.adminPanel');
