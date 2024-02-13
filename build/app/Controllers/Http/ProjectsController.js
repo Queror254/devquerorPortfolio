@@ -27,16 +27,16 @@ class ProjectsController {
         }
     }
     async edit({ params, view }) {
-        const project = await Project_1.default.findByOrFail('slug', params.slug);
-        return view.render('edit', { project });
+        const ProjectE = await Project_1.default.findByOrFail('slug', params.slug);
+        return view.render('portfolio/edit', { ProjectE });
     }
     async update({ request, params, response }) {
         try {
-            const data = request.only(['title', 'content', 'website', 'slug']);
+            const data = request.only(['title', 'content']);
             const project = await Project_1.default.findByOrFail('slug', params.slug);
             const image = request.file('image');
             await image.move('public/images');
-            if (!image.moved()) {
+            if (!image()) {
                 throw image.error();
             }
             data.image = image.fileName;

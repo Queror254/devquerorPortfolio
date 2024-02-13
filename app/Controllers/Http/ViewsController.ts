@@ -1,11 +1,13 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import About from 'App/Models/About';
+import Project from 'App/Models/Project';
 
 export default class ViewsController {
     public async index({ view }: HttpContextContract) {
         // Render the 'home.edge' template
+        const project = await Project.all();
         const about = await About.all();
-        return view.render('home', { about });
+        return view.render('home', { about, project });
     }
 
     public async details({ view }: HttpContextContract) {

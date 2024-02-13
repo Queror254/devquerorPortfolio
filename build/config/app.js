@@ -9,7 +9,7 @@ const Env_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Core/Env"));
 const Application_1 = __importDefault(global[Symbol.for('ioc.use')]("Adonis/Core/Application"));
 exports.appKey = Env_1.default.get('APP_KEY');
 exports.http = {
-    allowMethodSpoofing: false,
+    allowMethodSpoofing: true,
     subdomainOffset: 2,
     generateRequestId: false,
     trustProxy: proxy_addr_1.default.compile('loopback'),

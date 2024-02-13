@@ -36,19 +36,19 @@ export default class ProjectsController {
     }
 
     public async edit({ params, view }: HttpContextContract) {
-        const project = await Project.findByOrFail('slug', params.slug)
-        return view.render('edit', { project })
+        const ProjectE = await Project.findByOrFail('slug', params.slug)
+        return view.render('portfolio/edit', { ProjectE })
     }
 
     public async update({ request, params, response }: HttpContextContract) {
         try {
-            const data = request.only(['title', 'content', 'website', 'slug'])
+            const data = request.only(['title', 'content'])
             const project = await Project.findByOrFail('slug', params.slug)
 
             // Move the uploaded image to the 'images' directory in the public folder
             const image = request.file('image')
             await image.move('public/images')
-            if (!image.moved()) {
+            if (!image()) {
                 throw image.error()
             }
             data.image = image.fileName
