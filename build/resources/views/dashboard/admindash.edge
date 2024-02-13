@@ -318,7 +318,7 @@
                     <!-- Delete Project Form -->
                     <h2>Delete Project</h2>
                     <form action="{{route('project.delete',['test-1'])}}?_method=DELETE" method="post">
-                        {{ csrfField() }}
+                        {{ csrfField }}
                         <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
                     </form>
                 </div>
