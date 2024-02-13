@@ -97,7 +97,9 @@
                     <img src="/images/profile.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                    <h3>Software Developer</h3>
+                    @each(abt in about)
+                    <h3>{{abt.title}}</h3>
+                    @end
                     <p class="fst-italic">
 
                         Welcome to my portfolio! I'm Victor, a software developer weaving functionality and
