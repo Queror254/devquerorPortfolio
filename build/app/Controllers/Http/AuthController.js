@@ -18,7 +18,7 @@ class AuthController {
             console.log('User created successfully:', admin.toJSON());
             await auth.login(admin);
             console.log('User logged in successfully.');
-            return response.redirect().toPath('/admin/login');
+            return response.redirect().toPath('/admin');
         }
         catch (error) {
             console.error('Error during registration:', error.message);

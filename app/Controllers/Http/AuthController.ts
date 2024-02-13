@@ -21,7 +21,7 @@ export default class AuthController {
             await auth.login(admin);
             console.log('User logged in successfully.');
 
-            return response.redirect().toPath('/admin/login');
+            return response.redirect().toPath('/admin');
         } catch (error) {
             console.error('Error during registration:', error.message);
             return response.status(500).send({ error: 'Failed to create user.' });
