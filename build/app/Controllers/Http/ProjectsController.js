@@ -46,7 +46,7 @@ class ProjectsController {
         }
         catch (error) {
             console.error(error);
-            return { error: 'Error updating project' };
+            return { error };
         }
     }
     async delete({ params, response }) {
@@ -57,7 +57,7 @@ class ProjectsController {
         }
         catch (error) {
             console.error(error);
-            return { error: 'Error deleting project' };
+            return { error };
         }
     }
 }

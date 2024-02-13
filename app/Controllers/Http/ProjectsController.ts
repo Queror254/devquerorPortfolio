@@ -61,7 +61,7 @@ export default class ProjectsController {
             return response.redirect().back()
         } catch (error) {
             console.error(error)
-            return { error: 'Error updating project' }
+            return { error }
         }
     }
 
@@ -74,7 +74,7 @@ export default class ProjectsController {
             return response.redirect().back()
         } catch (error) {
             console.error(error)
-            return { error: 'Error deleting project' }
+            return { error }
         }
     }
 }
