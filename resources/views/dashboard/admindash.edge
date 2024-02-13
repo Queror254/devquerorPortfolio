@@ -285,7 +285,7 @@
                     <form action="/store_project" method="post" enctype="multipart/form-data">
                         <input type="text" name="title" placeholder="Title" required><br>
                         <textarea name="content" placeholder="Content" required></textarea><br>
-                        <input type="text" name="website" placeholder="Website" required><br>
+                        <input type="text" name="slug" placeholder="unique slug" required><br>
                         <input type="file" name="image"><br>
                         <button type="submit">Create</button>
                     </form>
@@ -298,7 +298,7 @@
                     <form id="updateForm" action="/update_project/" method="post" enctype="multipart/form-data">
                         <input type="text" name="title" placeholder="Title" required><br>
                         <textarea name="content" placeholder="Content" required></textarea><br>
-                        <input type="text" name="website" placeholder="Website" required><br>
+                        <input type="text" name="slug" placeholder="unique slug" required><br>
                         <input type="file" name="image"><br>
                         <button type="submit">Update</button>
                     </form>
