@@ -4,7 +4,8 @@ import About from 'App/Models/About';
 export default class ViewsController {
     public async index({ view }: HttpContextContract) {
         // Render the 'home.edge' template
-        return view.render('home');
+        const about = await About.all();
+        return view.render('home', { about });
     }
 
     public async details({ view }: HttpContextContract) {
@@ -24,7 +25,6 @@ export default class ViewsController {
 
     public async admin({ view }: HttpContextContract) {
         const about = await About.all();
-        console.log(about);
         return view.render('dashboard/admindash', { about });
     }
 }

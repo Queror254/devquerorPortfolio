@@ -26,7 +26,7 @@ Route.get('/welcome', async ({ view }) => {
 
 //Get request :
 Route.get('/', "ViewsController.index").as('route.home')
-Route.get('/admin/login', "ViewsController.login").as('route.login')
+Route.get('/admin/', "ViewsController.login").as('route.login')
 Route.get('/admin/signup', "ViewsController.signup").as('route.signup')
 Route.get('/details', "ViewsController.details").as('route.details')
 Route.get('/admin/panel_', "ViewsController.admin").as('route.adminPanel')
