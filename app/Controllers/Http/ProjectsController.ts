@@ -4,8 +4,7 @@ import Project from 'App/Models/Project'
 
 export default class ProjectsController {
     public async index({ view, }: HttpContextContract) {
-        const project = await Project.all();
-        return project;
+        return view.render('portfolio/create');
     }
 
     public async store({ request, response }: HttpContextContract) {

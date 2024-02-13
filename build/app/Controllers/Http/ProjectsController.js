@@ -6,8 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Project_1 = __importDefault(global[Symbol.for('ioc.use')]("App/Models/Project"));
 class ProjectsController {
     async index({ view, }) {
-        const project = await Project_1.default.all();
-        return project;
+        return view.render('portfolio/create');
     }
     async store({ request, response }) {
         try {

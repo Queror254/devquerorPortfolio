@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Project</title>
+</head>
+
+<body>
+<main>
+@each(project in ProjectE)
+    <h1>Update Project</h1>
+    <form action="{{route('project.update', [project.slug])}}?_method=PATCH" method="POST" enctype="multipart/form-data">
+    {{csrfField}}
+        <!-- Title -->
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value="{{project.title}}"><br><br>
+
+        <!-- Content -->
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content">{{project.content}}</textarea><br><br>
+
+        <!-- Image Upload -->
+        <label for="image">Image:</label><br>
+        <input type="file" id="image" name="image"><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Update</button>
+    </form>
+    @endeach
+    </main>
+</body>
+
+</html>

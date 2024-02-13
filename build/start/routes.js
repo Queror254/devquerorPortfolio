@@ -18,9 +18,9 @@ Route_1.default.post('/abouts', 'AboutsController.store');
 Route_1.default.put('/abouts/update', 'AboutsController.update');
 Route_1.default.delete('/abouts/delete', 'AboutsController.destroy');
 Route_1.default.get('/test', 'AboutsController.index');
-Route_1.default.get('/project', 'ProjectsController.index');
+Route_1.default.get('/new_project', 'ProjectsController.index').as('project.create');
 Route_1.default.post('/store_project', 'ProjectsController.store').as('project.store');
 Route_1.default.patch('/update_project/:slug', 'ProjectsController.update').as('project.update');
-Route_1.default.delete('/delete_project/:slug', 'ProjectsController.delete').as('projects.delete');
+Route_1.default.delete('/delete_project/:slug', 'ProjectsController.delete').as('project.delete');
 Route_1.default.get('/edit_project/:slug', 'ProjectsController.edit').as('project.edit');
 //# sourceMappingURL=routes.js.map

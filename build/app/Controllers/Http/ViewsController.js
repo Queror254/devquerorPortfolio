@@ -21,8 +21,8 @@ class ViewsController {
         return view.render('auth/login');
     }
     async admin({ view }) {
-        const about = await About_1.default.all();
-        return view.render('dashboard/admindash', { about });
+        const project = await Project_1.default.all();
+        return view.render('dashboard/admindash', { project });
     }
 }
 exports.default = ViewsController;

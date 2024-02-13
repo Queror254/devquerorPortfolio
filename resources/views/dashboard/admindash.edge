@@ -317,10 +317,9 @@
                 <div id="delete-prj">
                     <!-- Delete Project Form -->
                     <h2>Delete Project</h2>
-                    <form id="deleteForm" action="/delete_project/" method="post">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="text" name="slug" placeholder="Enter project slug to delete" required><br>
-                        <button type="submit">Delete</button>
+                    <form action="{{route('news.destroy',['test-1'])}}?_method=DELETE" method="post">
+                        {{ csrfField() }}
+                        <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
                     </form>
                 </div>
 
@@ -347,28 +346,29 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Street Address</th>
-                                <th>Apt No</th>
-                                <th>City</th>
-                                <th>State</th>
-                                <th>Zipcode</th>
+                                <th>Title</th>
+                                <th>Content</th>
+                                <th>Image</th>
+                                <th>Slug</th>
+
                             </tr>
                         </thead>
                         <tbody>
-                            @each(user in users)
+                            @each(prj in project)
                             <tr>
-                                <td>{{ user.id }}</td>
-                                <td>{{ user.firstName }} {{ user.secondName }}</td>
-                                <td>{{ user.email }}</td>
-                                <td>{{ user.streetAddress }}</td>
-                                <td>{{ user.aptNo }}</td>
-                                <td>{{ user.city }}</td>
-                                <td>{{ user.state }}</td>
-                                <td>{{ user.zipCode }}</td>
+                                <td>{{prj.id}}</td>
+                                <td>{{prj.title}} </td>
+                                <td>{{prj.content}}</td>
+                                <td>{{prj.image}}</td>
+                                <td>{{prj.slug}}</td>
+                                <a href="{{route('project.edit',[prj.slug])}}"
+                                    class="btn btn-sm btn-outline-secondary">Edit</a>
+                                <form action="{{route('project.delete',[prj.slug])}}?_method=DELETE" method="post">
+                                    {{ csrfField() }}
+                                    <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+                                </form>
                             </tr>
-                            @end
+                            @endeach
                         </tbody>
                     </table>
                 </div>

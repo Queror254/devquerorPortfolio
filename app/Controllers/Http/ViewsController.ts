@@ -26,7 +26,7 @@ export default class ViewsController {
     }
 
     public async admin({ view }: HttpContextContract) {
-        const about = await About.all();
-        return view.render('dashboard/admindash', { about });
+        const project = await Project.all();
+        return view.render('dashboard/admindash', { project });
     }
 }
