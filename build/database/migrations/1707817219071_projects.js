@@ -14,8 +14,11 @@ class default_1 extends Schema_1.default {
             table.increments('id');
             table.string('title').notNullable();
             table.string('content').notNullable();
-            table.string('slug').unique();
+            table.string('slug', 100).unique();
             table.string('image').nullable();
+            table.string('github').notNullable();
+            table.string('category').notNullable();
+            table.string('skills').notNullable;
             table.timestamp('created_at', { useTz: true });
             table.timestamp('updated_at', { useTz: true });
         });

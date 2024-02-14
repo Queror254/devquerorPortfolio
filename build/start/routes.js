@@ -23,4 +23,11 @@ Route_1.default.post('/store_project', 'ProjectsController.store').as('project.s
 Route_1.default.patch('/update_project/:slug', 'ProjectsController.update').as('project.update');
 Route_1.default.delete('/delete_project/:slug', 'ProjectsController.delete').as('project.delete');
 Route_1.default.get('/edit_project/:slug', 'ProjectsController.edit').as('project.edit');
+Route_1.default.get('/details/:slug', 'ProjectsController.more').as('project.detail');
+Route_1.default.get('/500', async ({ view }) => {
+    return view.render('errors/server-error');
+});
+Route_1.default.get('/404', async ({ view }) => {
+    return view.render('errors/not-found');
+});
 //# sourceMappingURL=routes.js.map

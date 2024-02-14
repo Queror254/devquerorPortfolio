@@ -17,6 +17,15 @@ export default class Project extends BaseModel {
   @column()
   public image: string
 
+  @column()
+  public github: string
+
+  @column()
+  public category: string
+
+  @column()
+  public skills: string
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

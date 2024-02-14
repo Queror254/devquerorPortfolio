@@ -66,3 +66,16 @@ Route.delete('/delete_project/:slug', 'ProjectsController.delete').as('project.d
 
 //edit an existing portfolio item 
 Route.get('/edit_project/:slug', 'ProjectsController.edit').as('project.edit');
+
+//open the details page : 
+Route.get('/details/:slug', 'ProjectsController.more').as('project.detail');
+
+//error handling test routes : 
+Route.get('/500', async ({ view }) => {
+  return view.render('errors/server-error')
+})
+Route.get('/404', async ({ view }) => {
+  return view.render('errors/not-found')
+})
+
+

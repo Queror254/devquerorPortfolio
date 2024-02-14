@@ -25,10 +25,10 @@
                 <a><i class="bx bxs-dashboard"></i>Dashboard</a>
             </li>
             <li>
-                <a><i class="bx bx-listings"></i>Listings</a>
+                <a><i class="bx bx-listings"></i>Edit Abouts</a>
             </li>
             <li>
-                <a><i class="bx bx-p-buyers"></i>Users</a>
+                <a><i class="bx bx-p-buyers"></i>Create and Edit Projects</a>
             </li>
             <li>
                 <a><i class="bx bx-b-offers"></i>Buying Offers</a>
@@ -334,7 +334,8 @@
         <!--Main 3-->
         <main class="d-none" id="main-3">
             <div class="header">
-                <h1>Normal Users</h1>
+                <h1>Projects</h1>
+                <a href="{{route('project.create')}}" class="btn btn-sm btn-outline-secondary">Create</a>
             </div>
             <!--============= bottom Data Start ===============-->
             <div class="bottom_data">
@@ -350,6 +351,12 @@
                                 <th>Content</th>
                                 <th>Image</th>
                                 <th>Slug</th>
+                                <th>Category</th>
+                                <th>Github</th>
+                                <th>Skills</th>
+                                <th>Image</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
 
                             </tr>
                         </thead>
@@ -361,12 +368,20 @@
                                 <td>{{prj.content}}</td>
                                 <td>{{prj.image}}</td>
                                 <td>{{prj.slug}}</td>
-                                <a href="{{route('project.edit',[prj.slug])}}"
-                                    class="btn btn-sm btn-outline-secondary">Edit</a>
-                                <form action="{{route('project.delete',[prj.slug])}}?_method=DELETE" method="post">
-                                    {{ csrfField }}
-                                    <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
-                                </form>
+                                <td>{{prj.category}}</td>
+                                <td>{{prj.github}}</td>
+                                <td>{{prj.skills}}</td>
+                                <td>{{prj.image}}</td>
+                                <td> <a href="{{route('project.edit',[prj.slug])}}">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <form action="{{route('project.delete',[prj.slug])}}?_method=DELETE" method="post">
+                                        <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+                                    </form>
+                                </td>
+
                             </tr>
                             @endeach
                         </tbody>
@@ -374,87 +389,9 @@
                 </div>
             </div>
 
-            <div class="header">
-                <div class="header">
-                    <div class="header">
-                        <!--<h3>Spacer</h3>-->
-                    </div>
-                </div>
-            </div>
-
-            <div class="header mt-6">
-                <h1>Agents</h1>
-            </div>
             <!--============= bottom Data Start ===============-->
             <div class="bottom_data">
-                <div class="orders">
-                    <div class="header">
-                        <!--<h3>Recent Orders</h3>-->
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Date</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>103326</td>
-                                <td class="img_content">
-                                    <img src="images/profile.jpg" alt="" />
-                                    <p>John Doe</p>
-                                </td>
-                                <td>admin@onlineittuts.com</td>
-                                <td>6th Sep 2025</td>
-                                <td><span class="status completed">Completed</span></td>
-                            </tr>
-                            <tr>
-                                <td>103626</td>
-                                <td class="img_content">
-                                    <img src="images/profile.jpg" alt="" />
-                                    <p>Jullee Smith</p>
-                                </td>
-                                <td>admin@onlineittuts.com</td>
-                                <td>6th Sep 2025</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>103926</td>
-                                <td class="img_content">
-                                    <img src="images/profile.jpg" alt="" />
-                                    <p>Willims</p>
-                                </td>
-                                <td>admin@onlineittuts.com</td>
-                                <td>6th Sep 2025</td>
-                                <td><span class="status processing">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>103326</td>
-                                <td class="img_content">
-                                    <img src="images/profile.jpg" alt="" />
-                                    <p>John Doe</p>
-                                </td>
-                                <td>admin@onlineittuts.com</td>
-                                <td>6th Sep 2025</td>
-                                <td><span class="status completed">Completed</span></td>
-                            </tr>
-                            <tr>
-                                <td>103626</td>
-                                <td class="img_content">
-                                    <img src="images/profile.jpg" alt="" />
-                                    <p>Jullee Smith</p>
-                                </td>
-                                <td>admin@onlineittuts.com</td>
-                                <td>6th Sep 2025</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+
             </div>
 
             <!--============= bottom Data End ===============-->

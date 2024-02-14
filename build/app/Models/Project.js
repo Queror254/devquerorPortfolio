@@ -34,6 +34,18 @@ __decorate([
     __metadata("design:type", String)
 ], Project.prototype, "image", void 0);
 __decorate([
+    (0, Orm_1.column)(),
+    __metadata("design:type", String)
+], Project.prototype, "github", void 0);
+__decorate([
+    (0, Orm_1.column)(),
+    __metadata("design:type", String)
+], Project.prototype, "category", void 0);
+__decorate([
+    (0, Orm_1.column)(),
+    __metadata("design:type", String)
+], Project.prototype, "skills", void 0);
+__decorate([
     Orm_1.column.dateTime({ autoCreate: true }),
     __metadata("design:type", luxon_1.DateTime)
 ], Project.prototype, "createdAt", void 0);

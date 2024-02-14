@@ -649,26 +649,69 @@
             </div>
 
             <div class="row portfolio-container">
-
-                @each(prj in project)
+                <!---App-->
+                @each(app in project_App)
                 <div class="col-lg-4 col-md-6 portfolio-item filter-app">
                     <div class="portfolio-wrap">
-                        <img src="/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <img src="/images/portfolio/{{app.image}}" class="img-fluid" alt="">
                         <div class="portfolio-info">
-                            <h4>{{prj.title}}</h4>
-                            <p>App</p>
+                            <h4>{{app.title}}</h4>
                             <div class="portfolio-links">
-                                <a href="/images/portfolio/{{prj.image}}" data-gallery="portfolioGallery"
-                                    class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="/details" data-gallery="portfolioDetailsGallery"
-                                    data-glightbox="type: external" class="portfolio-details-lightbox"
-                                    title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                <a href="{{route('project.detail',[app.slug])}}" class="portfolio_details"
+                                    title="Portfolio Details"><i class="bx bx-link">more..</i></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 @endeach
 
+                <!--Web-->
+                @each(web in project_Web)
+                <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                    <div class="portfolio-wrap">
+                        <img src="/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>{{web.title}}</h4>
+                            <div class="portfolio-links">
+                                <a href="{{route('project.detail',[web.slug])}}" class="portfolio_details"
+                                    title="Portfolio Details"><i class="bx bx-link">more..</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endeach
+
+                <!--Card-->
+                @each(card in project_Card)
+                <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                    <div class="portfolio-wrap">
+                        <img src="/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>{{card.title}}</h4>
+                            <div class="portfolio-links">
+                                <a href="{{route('project.detail',[card.slug])}}" class="portfolio_details"
+                                    title="Portfolio Details"><i class="bx bx-link">more..</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endeach
+
+                <!--Api-->
+                @each(api in project_Api)
+                <div class="col-lg-4 col-md-6 portfolio-item filter-api">
+                    <div class="portfolio-wrap">
+                        <img src="/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>{{api.title}}</h4>
+                            <div class="portfolio-links">
+                                <a href="{{route('project.detail',[api.slug])}}" class="portfolio_details"
+                                    title="Portfolio Details"><i class="bx bx-link">more..</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endeach
 
 
             </div>
@@ -691,7 +734,7 @@
                     <div class="info-box">
                         <i class="bx bx-map"></i>
                         <h3>My Address</h3>
-                        <p>Meru, Kenya PO.BOX 60200</p>
+                        <p>Nairobi, Kenya PO.BOX 0100</p>
                     </div>
                 </div>
 

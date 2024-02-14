@@ -10,7 +10,7 @@ class ProjectsController {
     }
     async store({ request, response }) {
         try {
-            const data = request.only(['title', 'content', 'website', 'slug']);
+            const data = request.only(['title', 'content', 'slug', 'github', 'category', 'skills']);
             const image = request.file('image');
             await image.move('public/images');
             if (!image) {
@@ -18,30 +18,37 @@ class ProjectsController {
             }
             data.image = image.fileName;
             await Project_1.default.create(data);
-            return response.redirect().back();
+            return response.redirect().toPath('/admin/panel_');
         }
         catch (error) {
             console.error(error);
             return { error };
         }
     }
+    async more({ params, view }) {
+        try {
+            const ProjectE = await Project_1.default.query().where('slug', params.slug);
+            return view.render('details', { ProjectE });
+        }
+        catch (error) {
+            return { error };
+        }
+    }
     async edit({ params, view }) {
-        const ProjectE = await Project_1.default.findByOrFail('slug', params.slug);
-        return view.render('portfolio/edit', { ProjectE });
+        try {
+            const ProjectE = await Project_1.default.query().where('slug', params.slug);
+            return view.render('portfolio/edit', { ProjectE });
+        }
+        catch (error) {
+            return { error };
+        }
     }
     async update({ request, params, response }) {
         try {
-            const data = request.only(['title', 'content']);
-            const project = await Project_1.default.findByOrFail('slug', params.slug);
-            const image = request.file('image');
-            await image.move('public/images');
-            if (!image()) {
-                throw image.error();
-            }
-            data.image = image.fileName;
-            project.merge(data);
-            await project.save();
-            return response.redirect().back();
+            console.log(params.slug);
+            const data = request.only(['title', 'content', 'category', 'github', 'skills', 'image']);
+            await Project_1.default.query().where('slug', params.slug).update(data);
+            return response.redirect().toPath('/admin/panel_');
         }
         catch (error) {
             console.error(error);

@@ -5,9 +5,17 @@ import Project from 'App/Models/Project';
 export default class ViewsController {
     public async index({ view }: HttpContextContract) {
         // Render the 'home.edge' template
-        const project = await Project.all();
-        const about = await About.all();
-        return view.render('home', { about, project });
+        try {
+            const project_App = await Project.query().where('category', 'app')
+            const project_Web = await Project.query().where('category', 'web')
+            const project_Card = await Project.query().where('category', 'card')
+            const project_Api = await Project.query().where('category', 'api')
+            const about = await About.all();
+            return view.render('home', { about, project_App, project_Web, project_Card, project_Api });
+        } catch (error) {
+            console.log('error fetching project data', error)
+            return { error };
+        }
     }
 
     public async details({ view }: HttpContextContract) {

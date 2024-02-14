@@ -8,27 +8,40 @@
 </head>
 
 <body>
-<main>
-@each(project in ProjectE)
-    <h1>Update Project</h1>
-    <form action="{{route('project.update', [project.slug])}}?_method=PATCH" method="POST" enctype="multipart/form-data">
-    {{csrfField}}
-        <!-- Title -->
-        <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title" value="{{project.title}}"><br><br>
+    <main>
+        @each(project in ProjectE)
+        <h1>Update Project</h1>
+        <form action="{{route('project.update',[project.slug])}}?_method=PATCH" method="post"
+            enctype="multipart/form-data">
 
-        <!-- Content -->
-        <label for="content">Content:</label><br>
-        <textarea id="content" name="content">{{project.content}}</textarea><br><br>
+            <!-- Title -->
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" value="{{project.title}}"><br><br>
 
-        <!-- Image Upload -->
-        <label for="image">Image:</label><br>
-        <input type="file" id="image" name="image"><br><br>
+            <!-- Content -->
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content">{{project.content}}</textarea><br><br>
 
-        <!-- Submit Button -->
-        <button type="submit">Update</button>
-    </form>
-    @endeach
+            <!-- Image Upload -->
+            <label for="image">Image:</label><br>
+            <input type="text" id="image" name="image" value="{{project.image}}"><br><br>
+
+            <!-- Title -->
+            <label for="github">Github link:</label><br>
+            <input type="text" id="github" name="github" value="{{project.github}}"><br><br>
+
+            <!-- Title -->
+            <label for="category">Category:</label><br>
+            <input type="text" id="category" name="category" value="{{project.category}}"><br><br>
+
+            <!-- Title -->
+            <label for="skills">Skills:</label><br>
+            <input type="text" id="skills" name="skills" value="{{project.skills}}"><br><br>
+
+            <!-- Submit Button -->
+            <button type="submit">Update</button>
+        </form>
+        @end
     </main>
 </body>
 
