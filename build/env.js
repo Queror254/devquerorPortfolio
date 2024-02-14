@@ -14,10 +14,10 @@ exports.default = Env_1.default.rules({
     DRIVE_DISK: Env_1.default.schema.enum(['local']),
     NODE_ENV: Env_1.default.schema.enum(['development', 'production', 'test']),
     DB_CONNECTION: Env_1.default.schema.string(),
-    MYSQL_HOST: Env_1.default.schema.string({ format: 'host' }),
-    MYSQL_PORT: Env_1.default.schema.number(),
-    MYSQL_USER: Env_1.default.schema.string(),
-    MYSQL_PASSWORD: Env_1.default.schema.string.optional(),
-    MYSQL_DB_NAME: Env_1.default.schema.string(),
+    PG_HOST: Env_1.default.schema.string({ format: 'host' }),
+    PG_PORT: Env_1.default.schema.number(),
+    PG_USER: Env_1.default.schema.string(),
+    PG_PASSWORD: Env_1.default.schema.string.optional(),
+    PG_DB_NAME: Env_1.default.schema.string(),
 });
 //# sourceMappingURL=env.js.map
