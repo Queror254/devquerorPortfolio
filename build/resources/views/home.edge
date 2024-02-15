@@ -669,7 +669,7 @@
                 @each(web in project_Web)
                 <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                     <div class="portfolio-wrap">
-                        <img src="/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <img src="/images/portfolio/{{web.image}}" class="img-fluid" alt="">
                         <div class="portfolio-info">
                             <h4>{{web.title}}</h4>
                             <div class="portfolio-links">
@@ -685,7 +685,7 @@
                 @each(card in project_Card)
                 <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                     <div class="portfolio-wrap">
-                        <img src="/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <img src="/images/portfolio/{{card.image}}" class="img-fluid" alt="">
                         <div class="portfolio-info">
                             <h4>{{card.title}}</h4>
                             <div class="portfolio-links">
@@ -701,7 +701,7 @@
                 @each(api in project_Api)
                 <div class="col-lg-4 col-md-6 portfolio-item filter-api">
                     <div class="portfolio-wrap">
-                        <img src="/images/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                        <img src="/images/portfolio/{{api.image}}" class="img-fluid" alt="">
                         <div class="portfolio-info">
                             <h4>{{api.title}}</h4>
                             <div class="portfolio-links">
