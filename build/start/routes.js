@@ -12,6 +12,7 @@ Route_1.default.get('/admin/', "ViewsController.login").as('route.login');
 Route_1.default.get('/admin/signup', "ViewsController.signup").as('route.signup');
 Route_1.default.get('/details', "ViewsController.details").as('route.details');
 Route_1.default.get('/admin/panel_', "ViewsController.admin").as('route.adminPanel');
+Route_1.default.get('/comingsoon', "ViewsController.comingsoon").as('route.comingsoon');
 Route_1.default.post('/create/admin', 'AuthController.signup').as('route.createAdmin');
 Route_1.default.post("/admin/login", "AuthController.login").as('route.loginAdmin');
 Route_1.default.post('/abouts', 'AboutsController.store');

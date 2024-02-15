@@ -20,6 +20,9 @@ class ViewsController {
             return { error };
         }
     }
+    async comingsoon({ view }) {
+        return view.render('comingsoon');
+    }
     async details({ view }) {
         return view.render('details');
     }

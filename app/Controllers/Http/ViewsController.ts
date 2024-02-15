@@ -18,6 +18,11 @@ export default class ViewsController {
         }
     }
 
+    public async comingsoon({ view }: HttpContextContract) {
+        // Render the 'details.edge' template
+        return view.render('comingsoon');
+    }
+
     public async details({ view }: HttpContextContract) {
         // Render the 'details.edge' template
         return view.render('details');

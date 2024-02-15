@@ -30,6 +30,7 @@ Route.get('/admin/', "ViewsController.login").as('route.login')
 Route.get('/admin/signup', "ViewsController.signup").as('route.signup')
 Route.get('/details', "ViewsController.details").as('route.details')
 Route.get('/admin/panel_', "ViewsController.admin").as('route.adminPanel')
+Route.get('/comingsoon', "ViewsController.comingsoon").as('route.comingsoon')
 
 
 //post request : 
